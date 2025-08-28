@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدرسة الإسراء النموذجية للبنين - طولكرم</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    body { font-family: 'Cairo', sans-serif; background: #0b111e; color: #e5e7eb; }
+    .btn-primary {
+      background: linear-gradient(135deg, #3950d4, #6b7dc4);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #6b7dc4, #3950d4);
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-[#0b111e] text-gray-200">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-[#6b7dc4]">مدرسة الإسراء النموذجية - للبنين</a>
+      <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-300">
+        <a href="#about" class="hover:text-[#3950d4]">عن المدرسة</a>
+        <a href="#stats" class="hover:text-[#3950d4]">الأرقام</a>
+        <a href="#features" class="hover:text-[#3950d4]">مميزاتنا</a>
+        <a href="#news" class="hover:text-[#3950d4]">الأخبار</a>
+        <a href="#contact" class="hover:text-[#3950d4]">تواصل</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center text-center" style="background:url('assets/img/hero.jpg') center/cover no-repeat;">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0c153c]/90 to-[#0b111e]/95"></div>
+    <div class="relative z-10 max-w-3xl px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[#6b7dc4]">مدرسة الإسراء النموذجية للبنين</h1>
+      <p class="text-lg md:text-xl mb-6 text-gray-300">تعليم حديث برؤية مستقبلية في طولكرم</p>
+      <a href="#about" class="btn-primary text-white py-3 px-6 rounded-lg text-lg shadow-lg inline-block">استكشف المزيد</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4 text-[#3950d4]">عن المدرسة</h2>
+      <p class="text-gray-400">مدرسة خيرية تربوية فاعلة تهدف إلى إنشاء جيل تربوي يتصف بالصدق والإبداع والعطاء</p>
+    </div>
+ <div class="grid md:grid-cols-3 gap-8">
+  <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition">
+    <i class="fa-solid fa-lightbulb text-3xl text-[#3950d4] mb-4"></i>
+    <h3 class="font-bold text-lg mb-2">رؤيتنا</h3>
+    <p>إعداد جيل تربوي مبدع يتصف بالصدق والعطاء، قادر على مواجهة تحديات المستقبل.</p>
+  </div>
+  <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition">
+    <i class="fa-solid fa-book-open text-3xl text-[#3950d4] mb-4"></i>
+    <h3 class="font-bold text-lg mb-2">رسالتنا</h3>
+    <p>تقديم تعليم أكاديمي وتربوي متميز، مع التركيز على تنمية القيم الإسلامية والمهارات الحياتية.</p>
+  </div>
+  <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition">
+    <i class="fa-solid fa-handshake-angle text-3xl text-[#3950d4] mb-4"></i>
+    <h3 class="font-bold text-lg mb-2">قيمنا</h3>
+    <p>الصدق، الإبداع، العطاء، والالتزام بالقيم الإسلامية.</p>
+  </div>
+</div>
+
+  </section>
+
+  <!-- Stats -->
+  <section id="stats" class="py-20 bg-gradient-to-r from-[#0c153c] to-[#0b111e] text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-[#6b7dc4]">أرقام تعكس نجاحنا</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div><h3 class="text-4xl font-bold text-[#3950d4]">26+</h3><p>سنوات خبرة</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]">600+</h3><p>طالب</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]">98%</h3><p>نسبة النجاح</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]">10+</h3><p>نشاط لا منهجي</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+<section id="features" class="py-20 container mx-auto px-6">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-4 text-[#3950d4]">مميزاتنا</h2>
+    <p class="text-gray-400">بيئة تعليمية متطورة، كادر أكاديمي متميز، ورؤية تربوية تهدف إلى بناء جيل مبدع ومؤهل.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition">
+      <i class="fa-solid fa-chalkboard-teacher text-3xl text-[#6b7dc4] mb-4"></i>
+      <h3 class="font-bold text-lg mb-2">كادر أكاديمي مؤهل</h3>
+      <p>فريق تدريس متميز يسعى لتقديم تعليم نوعي ومواكب للتطورات الحديثة.</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition">
+      <i class="fa-solid fa-school text-3xl text-[#6b7dc4] mb-4"></i>
+      <h3 class="font-bold text-lg mb-2">بيئة تعليمية محفزة</h3>
+      <p>مرافق مدرسية مجهزة بأحدث التقنيات لتوفير بيئة تعليمية مناسبة.</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition">
+      <i class="fa-solid fa-users text-3xl text-[#6b7dc4] mb-4"></i>
+      <h3 class="font-bold text-lg mb-2">رؤية تربوية شاملة</h3>
+      <p>تسعى المدرسة لبناء جيل مبدع ومؤهل قادر على مواجهة تحديات المستقبل.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- News -->
+  <section id="news" class="py-20 bg-[#0c153c]">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 text-[#6b7dc4]">آخر الأخبار</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- News 1 -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/520871885_1147992447366784_5206560167477384778_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=flj6wLxRTVQQ7kNvwF61XDd&_nc_oc=AdnGTxQWWSqFgbKdph6a6BcPu7N4MX6Phv3cb34ZyPBzwOqNRMl8i4e6Iu4oEmyyr_0&_nc_zt=23&_nc_ht=scontent.fjrs10-1.fna&_nc_gid=6zBDo8Dgrsh-Wgf63xpUdQ&oh=00_AfUdKiJJr9tirUiZa5UqGWRGr7xyMasPdA_7_aq09aYvaQ&oe=68B6753B" alt="شكر وتقدير" class="w-full h-48 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="font-bold text-lg mb-2 text-[#3950d4]">شكر وتقدير</h3>
+          <p class="text-gray-300 mb-2">تتقدم لجنة زكاة طولكرم المركزية ومؤسسة الإسراء التعليمية بأسمى آيات الشكر والعرفان إلى سعادة الدكتور سمير جراد تقديراً لجهوده الداعمة والمخلصة في دعم مسيرة المؤسسة التعليمية.</p>
+          <span class="text-sm text-gray-400">20 يوليو 2025</span>
+        </div>
+      </div>
+
+      <!-- News 2 -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/538628743_1178448004321228_4364938060920212334_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rza8DgEnHuEQ7kNvwEbhBUk&_nc_oc=AdkQem5-OZD5ot6EJCfE0OzNOWLnJIldLmo5PVqH2eGOBC_USzuSyx3DacAG4TXqV08&_nc_zt=23&_nc_ht=scontent.fjrs10-1.fna&_nc_gid=8nJwfb4-aeasbF11fiqCXQ&oh=00_AfVoden3nzp9aA8ZycBZg7PezCHmOZQpe9jtYXVnJcAqjg&oe=68B6784D" alt="تقدير جهود المحافظ" class="w-full h-48 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="font-bold text-lg mb-2 text-[#3950d4]">مؤسسة الإسراء تثمن جهود المحافظ اللواء د. كميل</h3>
+          <p class="text-gray-300 mb-2">ثمنت المؤسسة جهود المحافظ اللواء د. عبد الله كميل ودعمه المستمر للمسيرة التعليمية في مدارس الإسراء، وتعزيز جهوده في ظل الظروف الصعبة بالمحافظة.</p>
+          <span class="text-sm text-gray-400">26 أغسطس 2025</span>
+        </div>
+      </div>
+
+      <!-- News 3 -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/521963592_1149327547233274_7848919588964365193_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S1hshoU1nQsQ7kNvwFlV8HI&_nc_oc=Adk28STzHnV0O5OJ9tzPbQ7fckFRt201LZextLnv4_oYk2-MT9HaGe6kT9-SqSiy9AI&_nc_zt=23&_nc_ht=scontent.fjrs10-1.fna&_nc_gid=q6-OF-_HDPhXQblO-HwZvA&oh=00_AfVUX54i0jlODjigk_E1RsAmICkSPO6NX2yppRaGYGgPXg&oe=68B68253" alt="فتح باب القبول" class="w-full h-48 object-cover">
+        <div class="p-6 text-right">
+          <h3 class="font-bold text-lg mb-2 text-[#3950d4]">إعلان // فتح باب القبول والتسجيل</h3>
+          <p class="text-gray-300 mb-2">تعلن دائرة القبول والتسجيل عن فتح باب التسجيل للطلاب الجدد للعام الدراسي 2025-2026م، مع توفير بيئة تعليمية وحافزة، وقاعات مجهزة بأحدث التقنيات.</p>
+          <span class="text-sm text-gray-400">22 يوليو 2025</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="location" class="py-20 container mx-auto px-6 text-center">
+  <h2 class="text-3xl font-bold mb-8 text-[#3950d4]">موقع المدرسة</h2>
+  <div class="glass rounded-2xl overflow-hidden shadow-lg">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26977.6517649086!2d35.0254354!3d32.3063063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d1734a6c29361%3A0xbbf658a904df01fd!2z2YXYr9ix2LPYqSDYp9mE2KfYs9ix2KfYoSDYp9mE2YbZhdmI2LDYrNmK2KkgLdio2YbZitmG!5e0!3m2!1sen!2s!4v1756405795619!5m2!1sen!2s"
+      width="100%" height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>
+
+  <!-- Contact -->
+<section id="contact" class="py-20 container mx-auto px-6 text-center">
+  <h2 class="text-3xl font-bold mb-4 text-[#3950d4]">تواصل معنا</h2>
+  <p class="mb-2">العنوان: طولكرم, شارع ارتاح بالقرب من قصر ليلتي</p>
+  <p class="mb-2">الهاتف: 0598166525 </p>
+  <p class="mb-6">البريد الإلكتروني: israaboy99@gmail.com</p>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/972598166525" target="_blank" class="btn-primary text-white py-3 px-6 rounded-lg text-lg shadow-lg inline-block flex items-center justify-center gap-2">
+      <i class="fa-brands fa-whatsapp text-lg"></i>
+      أرسل رسالة واتساب
+    </a>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-[#0b111e] text-gray-400 py-6 text-center border-t border-[#3950d4]/30">
+    <p>© 2025 مدرسة الإسراء النموذجية للبنين - طولكرم. جميع الحقوق محفوظة.</p>
+  </footer>
+  <section class="text-center text-gray-400 text-sm py-4 border-t border-[#3950d4]/20">
+  عمل طالب الإسراء عمر أبو بكر
+</section>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
