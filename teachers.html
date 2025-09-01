@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كادر التدريس - مدرسة الإسراء النموذجية</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body { font-family: 'Cairo', sans-serif; background: #0b111e; color: #e5e7eb; }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+    .teacher-card img { border-radius: 0.5rem; }
+    .teacher-card:hover { transform: translateY(-5px); transition: 0.3s; }
+    /* Hero animation */
+    .fade-in { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+  </style>
+</head>
+<body class="bg-[#0b111e] text-gray-200">
+
+<header class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold text-[#6b7dc4]">مدرسة الإسراء النموذجية - للبنين</a>
+    <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-300">
+      <a href="index.html#about" class="hover:text-[#3950d4]">عن المدرسة</a>
+      <a href="index.html#stats" class="hover:text-[#3950d4]">الأرقام</a>
+      <a href="index.html#features" class="hover:text-[#3950d4]">مميزاتنا</a>
+      <a href="index.html#news" class="hover:text-[#3950d4]">الأخبار</a>
+      <a href="index.html#contact" class="hover:text-[#3950d4]">تواصل</a>
+      <a href="teachers.html" class="hover:text-[#3950d4] font-bold">كادر التدريس</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section: Split Layout -->
+<section class="relative h-96 md:h-[28rem] flex flex-col md:flex-row items-center fade-in bg-gradient-to-r from-[#0c153c] to-[#0b111e] mt-16">
+
+  <!-- Left: Image -->
+  <div class="w-full md:w-1/2 flex items-center justify-center p-4">
+    <img src="assets/img/teachers/heroforteacherspage.jpg" alt="صورة المدرسة" 
+         class="max-w-full max-h-[400px] object-cover rounded-xl shadow-lg">
+  </div>
+
+  <!-- Right: Text -->
+  <div class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-right p-6">
+    <h1 class="text-4xl md:text-5xl font-bold text-[#6b7dc4] mb-4 leading-tight">
+      كادر التدريس
+    </h1>
+    <p class="text-gray-300 text-lg md:text-xl mb-6 leading-relaxed">
+      تعرف على معلمينا وموادهم الدراسية وخبراتهم التعليمية. نسعى لبناء جيل مبدع ومؤهل.
+    </p>
+    <a href="#teachers-grid" class="bg-[#3950d4] hover:bg-[#6b7dc4] transition-colors text-white py-2 px-6 rounded-lg text-lg shadow-lg inline-block">
+      استكشف المعلمين
+    </a>
+  </div>
+
+</section>
+
+<!-- Under Construction Banner -->
+<section class="container mx-auto px-6 py-12">
+  <div class="glass border border-[#3950d4]/50 rounded-xl flex flex-col md:flex-row items-center justify-between p-6 gap-4">
+    
+    <!-- Left: Icon -->
+    <div class="flex items-center justify-center text-[#6b7dc4] text-5xl md:text-6xl">
+      <i class="fas fa-tools"></i>
+    </div>
+
+    <!-- Middle: Text -->
+    <div class="text-center md:text-right flex-1">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#6b7dc4] mb-2">🚧 قسم قيد التطوير</h2>
+      <p class="text-gray-300 text-lg md:text-xl">
+        هذا القسم من الموقع لا يزال قيد الإنشاء!
+      </p>
+    </div>
+
+    <!-- Right: Secondary Icon -->
+    <div class="flex items-center justify-center text-[#6b7dc4] text-4xl md:text-5xl">
+      <i class="fas fa-hourglass-half"></i>
+    </div>
+  </div>
+</section>
+
+
+<section class="container mx-auto px-6 py-12 fade-in">
+  <!-- Search & Filter -->
+  <div class="mb-10 flex flex-col md:flex-row justify-center items-center gap-4">
+    <input id="search" type="text" placeholder="ابحث عن معلم..." class="glass px-4 py-2 rounded-lg w-full md:w-1/3 text-black">
+    <select id="filter-grade" class="glass px-4 py-2 rounded-lg text-black">
+      <option value="">اختر الصف</option>
+    </select>
+    <select id="filter-subject" class="glass px-4 py-2 rounded-lg text-black">
+      <option value="">اختر المادة</option>
+    </select>
+  </div>
+
+  <!-- Teachers Grid -->
+  <div id="teachers-grid" class="grid md:grid-cols-3 gap-8"></div>
+</section>
+
+<footer class="bg-[#0b111e] text-gray-400 py-6 text-center border-t border-[#3950d4]/30 mt-12">
+  <p>© 2025 مدرسة الإسراء النموذجية للبنين - طولكرم. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+  const teachersGrid = document.getElementById('teachers-grid');
+  const searchInput = document.getElementById('search');
+  const filterGrade = document.getElementById('filter-grade');
+  const filterSubject = document.getElementById('filter-subject');
+
+  let teachers = [];
+
+  // Fetch teachers data
+  fetch('assets/data/teachers.json')
+    .then(res => res.json())
+    .then(data => {
+      teachers = data;
+      populateFilters(data);
+      displayTeachers(data);
+    });
+
+  function populateFilters(data) {
+    const gradesSet = new Set();
+    const subjectsSet = new Set();
+
+    data.forEach(t => {
+      t.grades.forEach(g => gradesSet.add(g.trim()));
+      if (t.baseSubject) subjectsSet.add(t.baseSubject.trim());
+    });
+
+    // Populate grade filter
+    gradesSet.forEach(g => {
+      const option = document.createElement('option');
+      option.value = g;
+      option.textContent = g;
+      filterGrade.appendChild(option);
+    });
+
+    // Populate subject filter
+    subjectsSet.forEach(s => {
+      const option = document.createElement('option');
+      option.value = s;
+      option.textContent = s;
+      filterSubject.appendChild(option);
+    });
+  }
+
+  function displayTeachers(list) {
+    teachersGrid.innerHTML = '';
+    if (list.length === 0) {
+      teachersGrid.innerHTML = '<p class="text-gray-400 col-span-3">لا يوجد معلمين مطابقين للبحث.</p>';
+      return;
+    }
+
+    list.forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'teacher-card glass p-4 text-right';
+      card.innerHTML = `
+        <img src="${t.image}" alt="${t.name}" class="w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-[#3950d4] mb-1">${t.name}</h3>
+        <p class="mb-1"><strong>المادة:</strong> ${t.subject}</p>
+        <p class="mb-1"><strong>الصفوف:</strong> ${t.grades.join(', ')}</p>
+        <p class="text-gray-300">${t.bio}</p>
+      `;
+      teachersGrid.appendChild(card);
+    });
+  }
+
+  function filterTeachers() {
+    const query = searchInput.value.toLowerCase().trim();
+    const grade = filterGrade.value.trim();
+    const subject = filterSubject.value.trim();
+
+    const filtered = teachers.filter(t => {
+      const matchesSearch = t.name.toLowerCase().includes(query);
+
+      const matchesGrade =
+        grade === '' ||
+        t.grades.some(g => g.trim() === grade);
+
+      const matchesSubject =
+        subject === '' ||
+        (t.baseSubject && t.baseSubject.trim() === subject);
+
+      return matchesSearch && matchesGrade && matchesSubject;
+    });
+
+    displayTeachers(filtered);
+  }
+
+  // Event listeners
+  searchInput.addEventListener('input', filterTeachers);
+  filterGrade.addEventListener('change', filterTeachers);
+  filterSubject.addEventListener('change', filterTeachers);
+</script>
+
+</body>
+</html>

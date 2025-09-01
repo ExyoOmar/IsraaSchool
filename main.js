@@ -111,3 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+const toggleBtn = document.getElementById('toggle-theme');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+
+  // Optionally change icon
+  toggleBtn.innerHTML = document.body.classList.contains('light-mode') 
+    ? '<i class="fa-solid fa-moon"></i>' 
+    : '<i class="fa-solid fa-sun"></i>';
+});
