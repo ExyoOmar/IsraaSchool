@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
      3. Hero Button Hover Effect
   ========================= */
   const heroBtn = document.querySelector('.btn-primary');
-  heroBtn.addEventListener('mouseenter', () => heroBtn.classList.add('scale-105'));
-  heroBtn.addEventListener('mouseleave', () => heroBtn.classList.remove('scale-105'));
+  if (heroBtn) {
+    heroBtn.addEventListener('mouseenter', () => heroBtn.classList.add('scale-105'));
+    heroBtn.addEventListener('mouseleave', () => heroBtn.classList.remove('scale-105'));
+  }
 
   /* =========================
      4. Navbar Shadow on Scroll
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const speed = 200; // lower is faster
 
   const countUp = (el) => {
-    const target = +el.textContent.replace(/\D/g,''); // remove non-digits
+    const target = +el.textContent.replace(/\D/g,''); 
     let count = 0;
     const increment = target / speed;
 
@@ -110,15 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.toggle('p-4');
   });
 
-});
+  /* =========================
+     8. Theme Toggle
+  ========================= */
+  const toggleBtn = document.getElementById('toggle-theme');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    toggleBtn.innerHTML = document.body.classList.contains('light-mode') 
+      ? '<i class="fa-solid fa-moon"></i>' 
+      : '<i class="fa-solid fa-sun"></i>';
+  });
 
-const toggleBtn = document.getElementById('toggle-theme');
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-
-  // Optionally change icon
-  toggleBtn.innerHTML = document.body.classList.contains('light-mode') 
-    ? '<i class="fa-solid fa-moon"></i>' 
-    : '<i class="fa-solid fa-sun"></i>';
 });

@@ -3,31 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مدرسة الإسراء النموذجية للبنين في طولكرم - تعليم حديث برؤية مستقبلية تركز على القيم الإسلامية والإبداع">
+  <meta name="keywords" content="مدرسة الإسراء, تعليم, طولكرم, مدرسة للبنين, تعليم إسلامي">
+  <meta name="author" content="عمر أبو بكر">
+  <meta property="og:title" content="م modulatedة الإسراء النموذجية للبنين - طولكرم">
+  <meta property="og:description" content="انضم إلى مدرسة الإسراء النموذجية لتعليم متميز يجمع بين القيم الإسلامية والتطور الأكاديمي">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta property="og:url" content="https://www.israaschool.com">
   <title>مدرسة الإسراء النموذجية للبنين - طولكرم</title>
-  <link rel="icon" type="image/png" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
   <style>
     body { 
       font-family: 'Cairo', sans-serif; 
       background: #0b111e; 
       color: #e5e7eb; 
       transition: background 0.5s, color 0.5s;
+      overflow-x: hidden;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #3950d4, #6b7dc4);
-      transition: background 0.5s;
+      transition: all 0.3s ease;
     }
     .btn-primary:hover {
       background: linear-gradient(135deg, #6b7dc4, #3950d4);
+      transform: translateY(-2px);
     }
     .glass {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       color: #e5e7eb;
-      transition: background 0.5s, border 0.5s, color 0.5s;
+      transition: all 0.3s ease;
     }
 
     body.light-mode {
@@ -92,56 +101,155 @@
     body.light-mode .text-gray-300 { color: #1f2937 !important; }
     body.light-mode .text-gray-400 { color: #4b5563 !important; }
     body.light-mode .text-gray-500 { color: #6b7280 !important; }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #0b111e;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3950d4;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #3950d4;
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      display: none;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    #back-to-top:hover {
+      background: #6b7dc4;
+      transform: translateY(-3px);
+    }
+
+    /* Mobile Menu Animation */
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(100%);
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Enhanced Responsive Design */
+    @media (max-width: 768px) {
+      .hero-text {
+        font-size: 2.5rem !important;
+      }
+      .hero-subtext {
+        font-size: 1rem !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-text {
+        font-size: 2rem !important;
+      }
+      .hero-subtext {
+        font-size: 0.9rem !important;
+      }
+    }
   </style>
 </head>
 <body class="light-mode bg-[#0b111e] text-gray-200">
 
-  <header class="fixed top-0 left-0 right-0 z-50 glass">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="العودة إلى الأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <header class="fixed top-0 left-0 right-0 z-50 glass" role="banner">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-[#6b7dc4]">مدرسة الإسراء النموذجية - للبنين</a>
-      <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-300">
-        <a href="#about" class="hover:text-[#3950d4]">عن المدرسة</a>
-        <a href="#stats" class="hover:text-[#3950d4]">الأرقام</a>
-        <a href="#features" class="hover:text-[#3950d4]">مميزاتنا</a>
-        <a href="#news" class="hover:text-[#3950d4]">الأخبار</a>
-        <a href="#contact" class="hover:text-[#3950d4]">تواصل</a>
-        <a href="teachers.html" class="hover:text-[#3950d4]">كادر التدريس</a>
+      <a href="#" class="text-2xl font-bold text-[#6b7dc4]" aria-label="الصفحة الرئيسية لمدرسة الإسراء">مدرسة الإسراء النموذجية - للبنين</a>
+      <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-300" role="navigation">
+        <a href="#about" class="hover:text-[#3950d4]" aria-label="عن المدرسة">عن المدرسة</a>
+        <a href="#stats" class="hover:text-[#3950d4]" aria-label="الإحصائيات">الأرقام</a>
+        <a href="#features" class="hover:text-[#3950d4]" aria-label="المميزات">مميزاتنا</a>
+        <a href="#news" class="hover:text-[#3950d4]" aria-label="الأخبار">الأخبار</a>
+        <a href="#newsletter" class="hover:text-[#3950d4]" aria-label="النشرة الإخبارية">النشرة الإخبارية</a>
+        <a href="#contact" class="hover:text-[#3950d4]" aria-label="تواصل معنا">تواصل</a>
+        <a href="teachers.html" class="hover:text-[#3950d4]" aria-label="كادر التدريس">كادر التدريس</a>
       </nav>
-<button id="toggle-theme" class="ml-4 text-gray-300 hover:text-[#3950d4]">
-  <i class="fa-solid fa-moon"></i>
-</button>
+      <button id="toggle-theme" class="ml-4 text-gray-300 hover:text-[#3950d4]" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-[#3950d4]" aria-label="قائمة الهاتف المحمول">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
+    <nav id="mobile-menu" class="mobile-menu hidden md:hidden fixed top-16 right-0 w-64 h-full bg-[#0b111e] glass p-4 space-y-4">
+      <a href="#about" class="block hover:text-[#3950d4]" aria-label="عن المدرسة">عن المدرسة</a>
+      <a href="#stats" class="block hover:text-[#3950d4]" aria-label="الإحصائيات">الأرقام</a>
+      <a href="#features" class="block hover:text-[#3950d4]" aria-label="المميزات">مميزاتنا</a>
+      <a href="#news" class="block hover:text-[#3950d4]" aria-label="الأخبار">الأخبار</a>
+      <a href="#newsletter" class="block hover:text-[#3950d4]" aria-label="النشرة الإخبارية">النشرة الإخبارية</a>
+      <a href="#contact" class="block hover:text-[#3950d4]" aria-label="تواصل معنا">تواصل</a>
+      <a href="teachers.html" class="block hover:text-[#3950d4]" aria-label="كادر التدريس">كادر التدريس</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center text-center">
-    <img src="assets/img/hero.jpg" alt="Hero" class="absolute inset-0 w-full h-full object-cover">
-    <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-[#0c153c]/90 to-[#0b111e]/95 transition"></div>
-    <div class="relative z-10 max-w-3xl px-4">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[#6b7dc4]">مدرسة الإسراء النموذجية للبنين</h1>
-      <p class="text-lg md:text-xl mb-6 text-gray-300">تعليم حديث برؤية مستقبلية في طولكرم</p>
-      <a href="#about" class="btn-primary text-white py-3 px-6 rounded-lg text-lg shadow-lg inline-block">استكشف المزيد</a>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center text-center" role="region" aria-labelledby="hero-title">
+  <img src="assets/img/hero-school.jpg" alt="صورة رئيسية لمدرسة الإسراء تُظهر الطلاب في التجمُّع الصباحي" class="absolute inset-0 w-full h-full object-cover opacity-90">
+  <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-[#0c153c]/80 to-[#0b111e]/90 transition"></div>
+  <div class="relative z-10 max-w-3xl px-4 text-white">
+    <h1 id="hero-title" class="text-4xl md:text-6xl font-bold mb-4 text-[#6b7dc4] hero-text">مدرسة الإسراء النموذجية للبنين</h1>
+    <p class="text-lg md:text-xl mb-6 text-gray-200 hero-subtext">تعليم حديث برؤية مستقبلية في طولكرم</p>
+    <a href="#about" class="btn-primary text-white py-3 px-6 rounded-lg text-lg shadow-lg inline-block hover:shadow-xl transition-shadow" aria-label="استكشف المزيد عن المدرسة">استكشف المزيد</a>
+  </div>
+</section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 container mx-auto px-6">
+  <section id="about" class="py-20 container mx-auto px-6" role="region" aria-labelledby="about-title">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4 text-[#3950d4]">عن المدرسة</h2>
+      <h2 id="about-title" class="text-3xl font-bold mb-4 text-[#3950d4]">عن المدرسة</h2>
       <p class="text-gray-400">مدرسة خيرية تربوية فاعلة تهدف إلى إنشاء جيل تربوي يتصف بالصدق والإبداع والعطاء</p>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition">
+      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition" role="article">
         <i class="fa-solid fa-lightbulb text-3xl text-[#3950d4] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">رؤيتنا</h3>
         <p>إعداد جيل تربوي مبدع يتصف بالصدق والعطاء، قادر على مواجهة تحديات المستقبل.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition">
+      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition" role="article">
         <i class="fa-solid fa-book-open text-3xl text-[#3950d4] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">رسالتنا</h3>
         <p>تقديم تعليم أكاديمي وتربوي متميز، مع التركيز على تنمية القيم الإسلامية والمهارات الحياتية.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition">
+      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition" role="article">
         <i class="fa-solid fa-handshake-angle text-3xl text-[#3950d4] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">قيمنا</h3>
         <p>الصدق، الإبداع، العطاء، والالتزام بالقيم الإسلامية.</p>
@@ -150,36 +258,36 @@
   </section>
 
   <!-- Stats Section -->
-  <section id="stats" class="py-20 bg-gradient-to-r from-[#0c153c] to-[#0b111e] text-white">
+  <section id="stats" class="py-20 bg-gradient-to-r from-[#0c153c] to-[#0b111e] text-white" role="region" aria-labelledby="stats-title">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12 text-[#6b7dc4]">أرقام تعكس نجاحنا</h2>
+      <h2 id="stats-title" class="text-3xl font-bold mb-12 text-[#6b7dc4]">أرقام تعكس نجاحنا</h2>
       <div class="grid md:grid-cols-4 gap-8">
-        <div><h3 class="text-4xl font-bold text-[#3950d4]">26+</h3><p>سنوات خبرة</p></div>
-        <div><h3 class="text-4xl font-bold text-[#3950d4]">600+</h3><p>طالب</p></div>
-        <div><h3 class="text-4xl font-bold text-[#3950d4]">98%</h3><p>نسبة النجاح</p></div>
-        <div><h3 class="text-4xl font-bold text-[#3950d4]">10+</h3><p>نشاط لا منهجي</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="سنوات الخبرة">26+</h3><p>سنوات خبرة</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="عدد الطلاب">600+</h3><p>طالب</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="نسبة النجاح">98%</h3><p>نسبة النجاح</p></div>
+        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="الأنشطة اللامنهجية">10+</h3><p>نشاط لا منهجي</p></div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="py-20 container mx-auto px-6">
+  <section id="features" class="py-20 container mx-auto px-6" role="region" aria-labelledby="features-title">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4 text-[#3950d4]">مميزاتنا</h2>
+      <h2 id="features-title" class="text-3xl font-bold mb-4 text-[#3950d4]">مميزاتنا</h2>
       <p class="text-gray-400">بيئة تعليمية متطورة، كادر أكاديمي متميز، ورؤية تربوية تهدف إلى بناء جيل مبدع ومؤهل.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition">
+      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition" role="article">
         <i class="fa-solid fa-chalkboard-teacher text-3xl text-[#6b7dc4] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">كادر أكاديمي مؤهل</h3>
         <p>فريق تدريس متميز يسعى لتقديم تعليم نوعي ومواكب للتطورات الحديثة.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition">
+      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition" role="article">
         <i class="fa-solid fa-school text-3xl text-[#6b7dc4] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">بيئة تعليمية محفزة</h3>
         <p>مرافق مدرسية مجهزة بأحدث التقنيات لتوفير بيئة تعليمية مناسبة.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition">
+      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition" role="article">
         <i class="fa-solid fa-users text-3xl text-[#6b7dc4] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">رؤية تربوية شاملة</h3>
         <p>تسعى المدرسة لبناء جيل مبدع ومؤهل قادر على مواجهة تحديات المستقبل.</p>
@@ -188,32 +296,44 @@
   </section>
 
   <!-- News Section -->
-  <section id="news" class="py-20 bg-[#0c153c]">
+  <section id="news" class="py-20 bg-[#0c153c]" role="region" aria-labelledby="news-title">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12 text-[#6b7dc4]">آخر الأخبار</h2>
+      <h2 id="news-title" class="text-3xl font-bold mb-12 text-[#6b7dc4]">آخر الأخبار</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass rounded-2xl overflow-hidden">
-          <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/520871885_1147992447366784_5206560167477384778_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=flj6wLxRTVQQ7kNvwF61XDd&_nc_oc=AdnGTxQWWSqFgbKdph6a6BcPu7N4MX6Phv3cb34ZyPBzwOqNRMl8i4e6Iu4oEmyyr_0&_nc_zt=23&_nc_ht=scontent.fjrs10-1.fna&_nc_gid=6zBDo8Dgrsh-Wgf63xpUdQ&oh=00_AfUdKiJJr9tirUiZa5UqGWRGr7xyMasPdA_7_aq09aYvaQ&oe=68B6753B" alt="شكر وتقدير" class="w-full h-48 object-cover">
+        <div class="glass rounded-2xl overflow-hidden" role="article">
+          <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.308 fitting08-6/520871885_1147992447366784_5206560167477384778_n.jpg" alt="شكر وتقدير" class="w-full h-48 object-cover">
           <div class="p-6 text-right">
             <h3 class="font-bold text-lg mb-2 text-[#3950d4]">شكر وتقدير</h3>
             <p class="text-gray-300 mb-2">تتقدم لجنة زكاة طولكرم المركزية ومؤسسة الإسراء التعليمية بأسمى آيات الشكر والعرفان إلى سعادة الدكتور سمير جراد...</p>
             <span class="text-sm text-gray-400">20 يوليو 2025</span>
+            <div class="mt-4 flex gap-2 justify-end">
+              <a href="https://www.facebook.com/IsraaExemplarySchool" class="text-[#3950d4] hover:text-[#6b7dc4]" aria-label="مشاركة على فيسبوك"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/israaboyschool/" class="text-[#3950d4] hover:text-[#6b7dc4]" aria-label="مشاركة على إنستاغرام"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
-        <div class="glass rounded-2xl overflow-hidden">
-          <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/538628743_1178448004321228_4364938060920212334_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rza8DgEnHuEQ7kNvwEbhBUk&_nc_oc=AdkQem5-OZD5ot6EJCfE0OzNOWLnJIldLmo5PVqH2eGOBC_USzuSyx3DacAG4TXqV08&_nc_zt=23&_nc_ht=scontent.fjrs10-1.fna&_nc_gid=8nJwfb4-aeasbF11fiqCXQ&oh=00_AfVoden3nzp9aA8ZycBZg7PezCHmOZQpe9jtYXVnJcAqjg&oe=68B6784D" alt="تقدير جهود المحافظ" class="w-full h-48 object-cover">
+        <div class="glass rounded-2xl overflow-hidden" role="article">
+          <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/538628743_1178448004321228_4364938060920212334_n.jpg" alt="تقدير جهود المحافظ" class="w-full h-48 object-cover">
           <div class="p-6 text-right">
             <h3 class="font-bold text-lg mb-2 text-[#3950d4]">مؤسسة الإسراء تثمن جهود المحافظ اللواء د. كميل</h3>
             <p class="text-gray-300 mb-2">ثمنت المؤسسة جهود المحافظ اللواء د. عبد الله كميل ودعمه المستمر للمسيرة التعليمية في مدارس الإسراء...</p>
             <span class="text-sm text-gray-400">26 أغسطس 2025</span>
+            <div class="mt-4 flex gap-2 justify-end">
+              <a href="https://www.facebook.com/IsraaExemplarySchool" class="text-[#3950d4] hover:text-[#6b7dc4]" aria-label="مشاركة على فيسبوك"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/israaboyschool/" class="text-[#3950d4] hover:text-[#6b7dc4]" aria-label="مشاركة على إنستاغرام"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
-        <div class="glass rounded-2xl overflow-hidden">
-          <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/521963592_1149327547233274_7848919588964365193_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S1hshoU1nQsQ7kNvwFlV8HI&_nc_oc=Adk28STzHnV0O5OJ9tzPbQ7fckFRt201LZextLnv4_oYk2-MT9HaGe6kT9-SqSiy9AI&_nc_zt=23&_nc_ht=scontent.fjrs10-1.fna&_nc_gid=q6-OF-_HDPhXQblO-HwZvA&oh=00_AfVUX54i0jlODjigk_E1RsAmICkSPO6NX2yppRaGYGgPXg&oe=68B68253" alt="فتح باب القبول" class="w-full h-48 object-cover">
+        <div class="glass rounded-2xl overflow-hidden yhden" role="article">
+          <img src="https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/521963592_1149327547233274_7848919588964365193_n.jpg" alt="فتح باب القبول" class="w-full h-48 object-cover">
           <div class="p-6 text-right">
             <h3 class="font-bold text-lg mb-2 text-[#3950d4]">إعلان // فتح باب القبول والتسجيل</h3>
             <p class="text-gray-300 mb-2">تعلن دائرة القبول والتسجيل عن فتح باب التسجيل للطلاب الجدد للعام الدراسي 2025-2026...</p>
             <span class="text-sm text-gray-400">22 يوليو 2025</span>
+            <div class="mt-4 flex gap-2 justify-end">
+              <a href="https://www.facebook.com/IsraaExemplarySchool" class="text-[#3950d4] hover:text-[#6b7dc4]" aria-label="مشاركة على فيسبوك"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/israaboyschool/" class="text-[#3950d4] hover:text-[#6b7dc4]" aria-label="مشاركة على إنستاغرام"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -221,17 +341,17 @@
   </section>
 
   <!-- Google Maps Section -->
-  <section id="contact" class="py-20">
+  <section id="contact" class="py-20" role="region" aria-labelledby="contact-title">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-8 text-[#3950d4]">موقع المدرسة</h2>
+      <h2 id="contact-title" class="text-3xl font-bold mb-8 text-[#3950d4]">موقع المدرسة</h2>
       <div class="rounded-2xl overflow-hidden shadow-lg">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1686.2108157309253!2d35.024002075013314!3d32.300524486369646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1756752566343!5m2!1sen!2shttps://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1686.2108157309253!2d35.024002075013314!3d32.300524486369646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d1734a6c29361%3A0xbbf658a904df01fd!2z2YXYr9ix2LPYqSDYp9mE2KfYs9ix2KfYoSDYp9mE2YbZhdmI2LDYrNmK2KkgLdio2YbZitmG!5e0!3m2!1sen!2s!4v1756752632719!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1686.2108157309253!2d35.024002075013314!3d32.300524486369646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d1734a6c29361%3A0xbbf658a904df01fd!2z2YXYr9ix2LPYqSDYp9mE2KfYs9ix2KfYoSDYp9mE2YbZhdmI2LDYrNmK2KkgLdio2YbZitmG!5e0!3m2!1sen!2s!4v1756752632719!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" aria-label="خريطة موقع مدرسة الإسراء"></iframe>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#0b111e] text-gray-200 pt-12">
+  <footer class="bg-[#0b111e] text-gray-200 pt-12" role="contentinfo">
     <div class="container mx-auto px-6">
       <div class="glass rounded-2xl p-6 mb-10 text-center max-w-3xl mx-auto shadow-lg">
         <i class="fa-solid fa-school text-2xl text-[#6b7dc4] mb-2"></i>
@@ -251,12 +371,13 @@
             <i class="fa-solid fa-link"></i> روابط سريعة
           </h3>
           <ul class="space-y-2">
-            <li><a href="#about" class="flex items-center gap-2 hover:text-[#3950d4]"><i class="fa-solid fa-angle-left"></i> عن المدرسة</a></li>
-            <li><a href="#stats" class="flex items-center gap-2 hover:text-[#3950d4]"><i class="fa-solid fa-angle-left"></i> الأرقام</a></li>
-            <li><a href="#features" class="flex items-center gap-2 hover:text-[#3950d4]"><i class="fa-solid fa-angle-left"></i> مميزاتنا</a></li>
-            <li><a href="#news" class="flex items-center gap-2 hover:text-[#3950d4]"><i class="fa-solid fa-angle-left"></i> الأخبار</a></li>
-            <li><a href="#contact" class="flex items-center gap-2 hover:text-[#3950d4]"><i class="fa-solid fa-angle-left"></i> تواصل</a></li>
-            <li><a href="teachers.html" class="flex items-center gap-2 hover:text-[#3950d4]"><i class="fa-solid fa-angle-left"></i> كادر التدريس</a></li>
+            <li><a href="#about" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="عن المدرسة">عن المدرسة</a></li>
+            <li><a href="#stats" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="الإحصائيات">الأرقام</a></li>
+            <li><a href="#features" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="المميزات">مميزاتنا</a></li>
+            <li><a href="#news" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="الأخبار">الأخبار</a></li>
+            <li><a href="#newsletter" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="النشرة الإخبارية">النشرة الإخبارية</a></li>
+            <li><a href="#contact" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="تواصل معنا">تواصل</a></li>
+            <li><a href="teachers.html" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="كادر التدريس">كادر التدريس</a></li>
           </ul>
         </div>
         <div class="glass rounded-2xl p-6 text-right shadow-lg hover:-translate-y-1 transition">
@@ -268,8 +389,8 @@
         </div>
       </div>
       <div class="flex justify-center gap-6 mt-6">
-        <a href="https://www.facebook.com/IsraaExemplarySchool" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]"><i class="fab fa-facebook-f text-xl"></i></a>
-        <a href="https://www.instagram.com/israaboyschool/" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="https://www.facebook.com/IsraaExemplarySchool" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]" aria-label="صفحة فيسبوك"><i class="fab fa-facebook-f text-xl"></i></a>
+        <a href="https://www.instagram.com/israaboyschool/" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]" aria-label="صفحة إنستغرام"><i class="fab fa-instagram text-xl"></i></a>
       </div>
       <div class="text-center text-gray-500 mt-6 text-sm">
         © 2025 مدرسة الإسراء النموذجية للبنين - طولكرم. جميع الحقوق محفوظة. | عمل طالب الإسراء عمر أبو بكر
@@ -278,15 +399,186 @@
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById('toggle-theme');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      toggleBtn.innerHTML = document.body.classList.contains('light-mode') 
-        ? '<i class="fa-solid fa-moon"></i>' 
-        : '<i class="fa-solid fa-sun"></i>';
-    });
-  </script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* =========================
+     1. Preloader
+  ========================= */
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.transition = 'opacity 0.5s ease';
+    preloader.style.opacity = '0';
+    setTimeout(() => preloader.style.display = 'none', 500);
+  });
 
+  /* =========================
+     2. Smooth Scroll for Navbar Links
+  ========================= */
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* =========================
+     3. Scroll Animation for Sections
+  ========================= */
+  const animatedSections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+        entry.target.classList.remove('opacity-0', 'translate-y-10', 'scale-95');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animatedSections.forEach(section => {
+    section.classList.add('opacity-0', 'translate-y-10', 'scale-95', 'transition-all', 'duration-700');
+    observer.observe(section);
+  });
+
+  /* =========================
+     4. Hero Button Hover Effect
+  ========================= */
+  const heroBtn = document.querySelector('.btn-primary');
+  if (heroBtn) {
+    heroBtn.addEventListener('mouseenter', () => heroBtn.classList.add('scale-105'));
+    heroBtn.addEventListener('mouseleave', () => heroBtn.classList.remove('scale-105'));
+  }
+
+  /* =========================
+     5. Navbar Shadow on Scroll
+  ========================= */
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-lg', 'backdrop-blur-md');
+    } else {
+      header.classList.remove('shadow-lg', 'backdrop-blur-md');
+    }
+  });
+
+  /* =========================
+     6. Lazy Loading Images
+  ========================= */
+  const lazyImages = document.querySelectorAll('img');
+  lazyImages.forEach(img => {
+    img.loading = 'lazy';
+  });
+
+  /* =========================
+     7. Stats Counter Animation
+  ========================= */
+  const counters = document.querySelectorAll('#stats h3');
+  const speed = 200;
+
+  const countUp = (el) => {
+    const target = +el.textContent.replace(/\D/g,'');
+    let count = 0;
+    const increment = target / speed;
+
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        el.textContent = Math.ceil(count) + el.textContent.replace(/\d/g,'');
+        requestAnimationFrame(updateCount);
+      } else {
+        el.textContent = target + el.textContent.replace(/\d/g,'');
+      }
+    };
+    updateCount();
+  };
+
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => statsObserver.observe(counter));
+
+  /* =========================
+     8. Mobile Navbar Toggle
+  ========================= */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('open');
+    mobileMenuBtn.innerHTML = mobileMenu.classList.contains('open')
+      ? '<i class="fa-solid fa-times"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  /* =========================
+     9. Theme Toggle
+  ========================= */
+  const toggleBtn = document.getElementById('toggle-theme');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    toggleBtn.innerHTML = document.body.classList.contains('light-mode')
+      ? '<i class="fa-solid fa-moon"></i>'
+      : '<i class="fa-solid fa-sun"></i>';
+  });
+
+  /* =========================
+     10. Back to Top Button
+  ========================= */
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* =========================
+     11. Newsletter Form Validation
+  ========================= */
+  const newsletterForm = document.getElementById('newsletter-submit');
+  const emailInput = document.getElementById('newsletter-email');
+  const errorMsg = document.getElementById('newsletter-error');
+
+  newsletterForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailRegex.test(email)) {
+      errorMsg.classList.add('hidden');
+      alert('تم الاشتراك بنجاح!'); // Replace with actual API call in production
+      emailInput.value = '';
+    } else {
+      errorMsg.classList.remove('hidden');
+    }
+  });
+
+  /* =========================
+     12. Social Sharing
+  ========================= */
+  const shareLinks = document.querySelectorAll('#news a[href="#"]');
+  shareLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = window.location.href;
+      const title = document.querySelector('#news h3').textContent;
+      if (link.querySelector('.fa-facebook-f')) {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+      } else if (link.querySelector('.fa-twitter')) {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
-

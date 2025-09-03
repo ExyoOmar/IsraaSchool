@@ -4,100 +4,148 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>كادر التدريس - مدرسة الإسراء النموذجية</title>
+  <meta name="description" content="تعرف على كادر التدريس في مدرسة الإسراء النموذجية للبنين - طولكرم. استعرض المعلمين، المواد، والخبرات.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Cairo', sans-serif; background: #0b111e; color: #e5e7eb; }
-    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-    .teacher-card img { border-radius: 0.5rem; }
-    .teacher-card:hover { transform: translateY(-5px); transition: 0.3s; }
-    /* Hero animation */
+    body { font-family: 'Cairo', sans-serif; background: #f5f5f5; color: #111827; }
+    .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); }
+    .teacher-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .teacher-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
     .fade-in { animation: fadeIn 1s ease-in-out; }
-    @keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1000; }
+    .modal-content { background: #fff; border-radius: 0.5rem; padding: 2rem; max-width: 500px; margin: 2rem auto; }
+    .star { color: #facc15; }
+    @media (max-width: 768px) {
+      .hero-text { font-size: 2.5rem !important; }
+      .hero-subtext { font-size: 1rem !important; }
+      .teacher-card { margin-bottom: 1rem; }
+    }
+    @media (max-width: 640px) {
+      .hero-text { font-size: 2rem !important; }
+      .hero-subtext { font-size: 0.9rem !important; }
+      .modal-content { margin: 1rem; }
+    }
+  .warning-section {
+  background: #ff6b6b; /* Bold warning color */
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin: 4rem auto 2rem;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeInWarning 1s ease-in-out;
+}
+.warning-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.warning-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+.warning-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+@keyframes fadeInWarning {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
   </style>
 </head>
-<body class="bg-[#0b111e] text-gray-200">
+<body class="bg-[#f5f5f5] text-gray-800">
 
+<!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 glass">
   <div class="container mx-auto px-6 py-3 flex justify-between items-center">
     <a href="index.html" class="text-2xl font-bold text-[#6b7dc4]">مدرسة الإسراء النموذجية - للبنين</a>
-    <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-300">
+    <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-600">
       <a href="index.html#about" class="hover:text-[#3950d4]">عن المدرسة</a>
       <a href="index.html#stats" class="hover:text-[#3950d4]">الأرقام</a>
       <a href="index.html#features" class="hover:text-[#3950d4]">مميزاتنا</a>
       <a href="index.html#news" class="hover:text-[#3950d4]">الأخبار</a>
       <a href="index.html#contact" class="hover:text-[#3950d4]">تواصل</a>
-      <a href="teachers.html" class="hover:text-[#3950d4] font-bold">كادر التدريس</a>
+      <a href="teachers.html" class="text-[#3950d4] font-bold">كادر التدريس</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero Section: Split Layout -->
-<section class="relative h-96 md:h-[28rem] flex flex-col md:flex-row items-center fade-in bg-gradient-to-r from-[#0c153c] to-[#0b111e] mt-16">
-
-  <!-- Left: Image -->
+<!-- Hero Section -->
+<section class="relative h-96 md:h-[28rem] flex flex-col md:flex-row items-center fade-in bg-gradient-to-r from-[#e0e7ff] to-[#f5f5f5] mt-16">
   <div class="w-full md:w-1/2 flex items-center justify-center p-4">
-    <img src="assets/img/teachers/heroforteacherspage.jpg" alt="صورة المدرسة" 
-         class="max-w-full max-h-[400px] object-cover rounded-xl shadow-lg">
+    <img src="assets/img/teachers/heroforteacherspage.jpg" alt="صورة من كادر التدريس في مدرسة الإسراء" 
+         class="max-w-full max-h-[400px] object-cover rounded-xl shadow-md">
   </div>
-
-  <!-- Right: Text -->
   <div class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-right p-6">
-    <h1 class="text-4xl md:text-5xl font-bold text-[#6b7dc4] mb-4 leading-tight">
-      كادر التدريس
-    </h1>
-    <p class="text-gray-300 text-lg md:text-xl mb-6 leading-relaxed">
+    <h1 class="text-4xl md:text-5xl font-bold text-[#6b7dc4] mb-4 leading-tight hero-text">كادر التدريس</h1>
+    <p class="text-gray-600 text-lg md:text-xl mb-6 leading-relaxed hero-subtext">
       تعرف على معلمينا وموادهم الدراسية وخبراتهم التعليمية. نسعى لبناء جيل مبدع ومؤهل.
     </p>
-    <a href="#teachers-grid" class="bg-[#3950d4] hover:bg-[#6b7dc4] transition-colors text-white py-2 px-6 rounded-lg text-lg shadow-lg inline-block">
+    <a href="#teachers-grid" class="bg-[#3950d4] hover:bg-[#6b7dc4] transition-colors text-white py-2 px-6 rounded-lg text-lg shadow-md inline-block">
       استكشف المعلمين
     </a>
   </div>
-
 </section>
-
-<!-- Under Construction Banner -->
-<section class="container mx-auto px-6 py-12">
-  <div class="glass border border-[#3950d4]/50 rounded-xl flex flex-col md:flex-row items-center justify-between p-6 gap-4">
-    
-    <!-- Left: Icon -->
-    <div class="flex items-center justify-center text-[#6b7dc4] text-5xl md:text-6xl">
-      <i class="fas fa-tools"></i>
-    </div>
-
-    <!-- Middle: Text -->
-    <div class="text-center md:text-right flex-1">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#6b7dc4] mb-2">🚧 قسم قيد التطوير</h2>
-      <p class="text-gray-300 text-lg md:text-xl">
-        هذا القسم من الموقع لا يزال قيد الإنشاء!
-      </p>
-    </div>
-
-    <!-- Right: Secondary Icon -->
-    <div class="flex items-center justify-center text-[#6b7dc4] text-4xl md:text-5xl">
-      <i class="fas fa-hourglass-half"></i>
-    </div>
-  </div>
+<!-- Warning Section (Notion-inspired) -->
+<section class="warning-section fade-in">
+  <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+  <h2>⚠️ قسم قيد التطوير</h2>
+  <p>هذا الجزء من الموقع لا يزال قيد الإنشاء. نعمل جاهدين لتقديم محتوى أفضل قريبًا. شكرًا لصبرك!</p>
 </section>
-
-
+<!-- Filters and Sorting Section -->
 <section class="container mx-auto px-6 py-12 fade-in">
-  <!-- Search & Filter -->
-  <div class="mb-10 flex flex-col md:flex-row justify-center items-center gap-4">
-    <input id="search" type="text" placeholder="ابحث عن معلم..." class="glass px-4 py-2 rounded-lg w-full md:w-1/3 text-black">
-    <select id="filter-grade" class="glass px-4 py-2 rounded-lg text-black">
-      <option value="">اختر الصف</option>
-    </select>
-    <select id="filter-subject" class="glass px-4 py-2 rounded-lg text-black">
-      <option value="">اختر المادة</option>
-    </select>
+  <div class="mb-10 flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- Filters -->
+    <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+      <input id="search" type="text" placeholder="ابحث عن معلم..." 
+             class="glass px-4 py-2 rounded-lg w-full md:w-1/3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3950d4]">
+      <select id="filter-grade" class="glass px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#3950d4]">
+        <option value="">اختر الصف الدراسي</option>
+      </select>
+      <select id="filter-subject" class="glass px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#3950d4]">
+        <option value="">اختر المادة الدراسية</option>
+      </select>
+    </div>
+    <!-- Sorting -->
+    <div class="flex gap-4">
+      <select id="sort-by" class="glass px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#3950d4]">
+        <option value="name-asc">الترتيب حسب الاسم (صاعد)</option>
+        <option value="name-desc">الترتيب حسب الاسم (هابط)</option>
+        <option value="subject">الترتيب حسب المادة</option>
+        <option value="grade">الترتيب حسب الصف</option>
+      </select>
+    </div>
   </div>
 
   <!-- Teachers Grid -->
-  <div id="teachers-grid" class="grid md:grid-cols-3 gap-8"></div>
+  <div id="teachers-grid" class="grid md:grid-cols-3 gap-6"></div>
+  <!-- Pagination -->
+  <div id="pagination" class="flex justify-center gap-2 mt-6"></div>
 </section>
 
-<footer class="bg-[#0b111e] text-gray-400 py-6 text-center border-t border-[#3950d4]/30 mt-12">
+<!-- Modal -->
+<div id="teacher-modal" class="modal">
+  <div class="modal-content glass p-6">
+    <span id="close-modal" class="float-left text-2xl cursor-pointer">&times;</span>
+    <img id="modal-image" src="" alt="صورة المعلم" class="w-full h-48 object-cover rounded-lg mb-4">
+    <h3 id="modal-name" class="text-2xl font-bold text-[#3950d4] mb-2"></h3>
+    <p id="modal-subject" class="mb-1"><strong>المادة:</strong> <span></span></p>
+    <p id="modal-grades" class="mb-1"><strong>الصفوف:</strong> <span></span></p>
+    <p id="modal-bio" class="text-gray-600 mb-2"></p>
+    <div id="modal-rating" class="flex gap-1 mb-2"></div>
+    <p id="modal-contact" class="text-gray-600"><strong>التواصل:</strong> <span></span></p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-[#f5f5f5] text-gray-500 py-6 text-center border-t border-gray-200 mt-12">
   <p>© 2025 مدرسة الإسراء النموذجية للبنين - طولكرم. جميع الحقوق محفوظة.</p>
 </footer>
 
@@ -106,92 +154,263 @@
   const searchInput = document.getElementById('search');
   const filterGrade = document.getElementById('filter-grade');
   const filterSubject = document.getElementById('filter-subject');
+  const sortBy = document.getElementById('sort-by');
+  const pagination = document.getElementById('pagination');
+  const teacherModal = document.getElementById('teacher-modal');
+  const closeModal = document.getElementById('close-modal');
+  const modalImage = document.getElementById('modal-image');
+  const modalName = document.getElementById('modal-name');
+  const modalSubject = document.getElementById('modal-subject');
+  const modalGrades = document.getElementById('modal-grades');
+  const modalBio = document.getElementById('modal-bio');
+  const modalRating = document.getElementById('modal-rating');
+  const modalContact = document.getElementById('modal-contact');
 
   let teachers = [];
+  const teachersPerPage = 6;
+  let currentPage = 1;
 
-  // Fetch teachers data
-  fetch('assets/data/teachers.json')
-    .then(res => res.json())
-    .then(data => {
-      teachers = data;
-      populateFilters(data);
-      displayTeachers(data);
+  // Fetch teachers data with sample ratings and contact
+  // Fetch teachers data with all 5-star ratings
+fetch('assets/data/teachers.json')
+  .then(res => res.json())
+  .then(data => {
+    teachers = data.map(t => ({
+      ...t,
+      rating: 5, // Set all ratings to 5 stars
+      contact: t.contact || 'غير متاح'
+    }));
+    populateFilters(teachers);
+    applyFiltersAndSort();
+  })
+  .catch(() => {
+    teachersGrid.innerHTML = '<p class="text-red-600 col-span-3">⚠️ تعذر تحميل بيانات المعلمين.</p>';
+  });
+
+// Update displayTeachers function
+function displayTeachers(list) {
+  teachersGrid.innerHTML = '';
+  if (list.length === 0) {
+    teachersGrid.innerHTML = '<p class="text-gray-600 col-span-3">لا يوجد معلمين مطابقين للبحث.</p>';
+    return;
+  }
+
+  list.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'teacher-card glass p-4 rounded-lg cursor-pointer';
+    card.innerHTML = `
+      <img src="${t.image || 'assets/img/teachers/placeholder.jpg'}" alt="${t.name || 'صورة معلم'}" class="w-full h-48 object-cover rounded-lg mb-2">
+      <h3 class="text-xl font-bold text-[#3950d4] mb-1">${t.name}</h3>
+      <p class="mb-1 text-gray-600"><strong>المادة:</strong> ${t.subject || '-'}</p>
+      <p class="mb-1 text-gray-600"><strong>الصفوف:</strong> ${(t.grades && t.grades.length > 0) ? t.grades.join(', ') : '-'}</p>
+      <div class="flex gap-1 mb-2">
+        ${Array.from({ length: 5 }, (_, i) => `<i class="fas fa-star star"></i>`).join('')} <!-- All 5 stars -->
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(t));
+    teachersGrid.appendChild(card);
+  });
+}
+
+ function filterTeachers() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  const selectedGrade = filterGrade.value;
+  const selectedSubject = filterSubject.value;
+
+  const filteredTeachers = teachers.filter(t => {
+    // Search by name
+    const matchesSearch = !searchTerm || t.name.toLowerCase().includes(searchTerm);
+
+    // Filter by grade
+    const matchesGrade = !selectedGrade || (Array.isArray(t.grades) && t.grades.includes(selectedGrade));
+
+    // Filter by subject with specific matching (e.g., "اللغة العربية")
+    let matchesSubject = true;
+    if (selectedSubject) {
+      let baseSubj = t.subject ? t.subject.trim() : '';
+      if (baseSubj.includes("للصف")) {
+        baseSubj = baseSubj.split("للصف")[0].trim().replace(/\s+/g, ' ');
+      }
+      matchesSubject = baseSubj === selectedSubject; // Exact match for subjects like "اللغة العربية"
+    }
+
+    return matchesSearch && matchesGrade && matchesSubject;
+  });
+
+  // Store filters in localStorage
+  localStorage.setItem('teacherFilters', JSON.stringify({
+    search: searchTerm,
+    grade: selectedGrade,
+    subject: selectedSubject,
+    sort: sortBy.value
+  }));
+  paginateTeachers(filteredTeachers);
+}
+
+// Ensure populateFilters includes relevant subjects and grades
+function populateFilters(data) {
+  const gradesSet = new Set();
+  const subjectsSet = new Set();
+
+  data.forEach(t => {
+    if (Array.isArray(t.grades)) t.grades.forEach(g => gradesSet.add(g.trim()));
+    let baseSubj = t.subject?.trim() || '';
+    if (baseSubj.includes("للصف")) baseSubj = baseSubj.split("للصف")[0].trim().replace(/\s+/g, ' ');
+    subjectsSet.add(baseSubj);
+  });
+
+  [filterGrade, filterSubject].forEach(select => select.innerHTML = '<option value="">اختر</option>');
+  gradesSet.forEach(g => {
+    const option = document.createElement('option');
+    option.value = g;
+    option.textContent = g;
+    filterGrade.appendChild(option);
+  });
+  subjectsSet.forEach(s => {
+    const option = document.createElement('option');
+    option.value = s;
+    option.textContent = s;
+    filterSubject.appendChild(option);
+  });
+}
+
+// Update displayTeachers to reflect filtered data
+function displayTeachers(list) {
+  teachersGrid.innerHTML = '';
+  if (list.length === 0) {
+    teachersGrid.innerHTML = '<p class="text-gray-600 col-span-3">لا يوجد معلمين مطابقين للبحث.</p>';
+    return;
+  }
+
+  list.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'teacher-card glass p-4 rounded-lg cursor-pointer';
+    card.innerHTML = `
+      <img src="${t.image || 'assets/img/teachers/placeholder.jpg'}" alt="${t.name || 'صورة معلم'}" class="w-full h-48 object-cover rounded-lg mb-2">
+      <h3 class="text-xl font-bold text-[#3950d4] mb-1">${t.name}</h3>
+      <p class="mb-1 text-gray-600"><strong>المادة:</strong> ${t.subject || '-'}</p>
+      <p class="mb-1 text-gray-600"><strong>الصفوف:</strong> ${(t.grades && t.grades.length > 0) ? t.grades.join(', ') : '-'}</p>
+      <div class="flex gap-1 mb-2">
+        ${Array.from({ length: 5 }, (_, i) => `<i class="fas fa-star star"></i>`).join('')}
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(t));
+    teachersGrid.appendChild(card);
+  });
+}
+
+// Event listeners
+[searchInput, filterGrade, filterSubject, sortBy].forEach(el => el.addEventListener('input', applyFiltersAndSort));
+sortBy.addEventListener('change', applyFiltersAndSort);
+
+  function applyFiltersAndSort() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const selectedGrade = filterGrade.value;
+    const selectedSubject = filterSubject.value;
+    const sortOption = sortBy.value;
+
+    let filteredTeachers = teachers.filter(t => {
+      const matchesSearch = !searchTerm || t.name.toLowerCase().includes(searchTerm);
+      const matchesGrade = !selectedGrade || t.grades?.includes(selectedGrade);
+      let matchesSubject = true;
+      if (selectedSubject) {
+        let baseSubj = t.subject?.trim() || '';
+        if (baseSubj.includes("للصف")) baseSubj = baseSubj.split("للصف")[0].trim().replace(/\s+/g, ' ');
+        matchesSubject = baseSubj === selectedSubject;
+      }
+      return matchesSearch && matchesGrade && matchesSubject;
     });
 
-  function populateFilters(data) {
-    const gradesSet = new Set();
-    const subjectsSet = new Set();
-
-    data.forEach(t => {
-      t.grades.forEach(g => gradesSet.add(g.trim()));
-      if (t.baseSubject) subjectsSet.add(t.baseSubject.trim());
+    // Sorting
+    filteredTeachers.sort((a, b) => {
+      switch (sortOption) {
+        case 'name-desc': return b.name.localeCompare(a.name);
+        case 'subject': return (a.subject || '').localeCompare(b.subject || '');
+        case 'grade': return (a.grades?.[0] || '').localeCompare(b.grades?.[0] || '');
+        case 'name-asc':
+        default: return a.name.localeCompare(b.name);
+      }
     });
 
-    // Populate grade filter
-    gradesSet.forEach(g => {
-      const option = document.createElement('option');
-      option.value = g;
-      option.textContent = g;
-      filterGrade.appendChild(option);
-    });
+    // Store filters in localStorage
+    localStorage.setItem('teacherFilters', JSON.stringify({
+      search: searchTerm,
+      grade: selectedGrade,
+      subject: selectedSubject,
+      sort: sortOption
+    }));
+    paginateTeachers(filteredTeachers);
+  }
 
-    // Populate subject filter
-    subjectsSet.forEach(s => {
-      const option = document.createElement('option');
-      option.value = s;
-      option.textContent = s;
-      filterSubject.appendChild(option);
-    });
+  function paginateTeachers(filteredTeachers) {
+    const totalPages = Math.ceil(filteredTeachers.length / teachersPerPage);
+    const start = (currentPage - 1) * teachersPerPage;
+    const end = start + teachersPerPage;
+    const paginatedTeachers = filteredTeachers.slice(start, end);
+
+    displayTeachers(paginatedTeachers);
+    renderPagination(totalPages);
   }
 
   function displayTeachers(list) {
     teachersGrid.innerHTML = '';
     if (list.length === 0) {
-      teachersGrid.innerHTML = '<p class="text-gray-400 col-span-3">لا يوجد معلمين مطابقين للبحث.</p>';
+      teachersGrid.innerHTML = '<p class="text-gray-600 col-span-3">لا يوجد معلمين مطابقين للبحث.</p>';
       return;
     }
 
     list.forEach(t => {
       const card = document.createElement('div');
-      card.className = 'teacher-card glass p-4 text-right';
+      card.className = 'teacher-card glass p-4 rounded-lg cursor-pointer';
       card.innerHTML = `
-        <img src="${t.image}" alt="${t.name}" class="w-full h-48 object-cover mb-4">
+        <img src="${t.image || 'assets/img/teachers/placeholder.jpg'}" alt="${t.name || 'صورة معلم'}" class="w-full h-48 object-cover rounded-lg mb-2">
         <h3 class="text-xl font-bold text-[#3950d4] mb-1">${t.name}</h3>
-        <p class="mb-1"><strong>المادة:</strong> ${t.subject}</p>
-        <p class="mb-1"><strong>الصفوف:</strong> ${t.grades.join(', ')}</p>
-        <p class="text-gray-300">${t.bio}</p>
+        <p class="mb-1 text-gray-600"><strong>المادة:</strong> ${t.subject || '-'}</p>
+        <p class="mb-1 text-gray-600"><strong>الصفوف:</strong> ${(t.grades && t.grades.length > 0) ? t.grades.join(', ') : '-'}</p>
+        <div class="flex gap-1 mb-2">
+          ${Array.from({ length: 5 }, (_, i) => `<i class="fas fa-star ${i < t.rating ? 'star' : 'text-gray-300'}""></i>`).join('')}
+        </div>
       `;
+      card.addEventListener('click', () => openModal(t));
       teachersGrid.appendChild(card);
     });
   }
 
-  function filterTeachers() {
-    const query = searchInput.value.toLowerCase().trim();
-    const grade = filterGrade.value.trim();
-    const subject = filterSubject.value.trim();
-
-    const filtered = teachers.filter(t => {
-      const matchesSearch = t.name.toLowerCase().includes(query);
-
-      const matchesGrade =
-        grade === '' ||
-        t.grades.some(g => g.trim() === grade);
-
-      const matchesSubject =
-        subject === '' ||
-        (t.baseSubject && t.baseSubject.trim() === subject);
-
-      return matchesSearch && matchesGrade && matchesSubject;
-    });
-
-    displayTeachers(filtered);
+  function renderPagination(totalPages) {
+    pagination.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement('button');
+      button.className = `px-3 py-1 rounded-lg ${i === currentPage ? 'bg-[#3950d4] text-white' : 'bg-gray-200 text-gray-800'} hover:bg-[#6b7dc4] hover:text-white transition-colors`;
+      button.textContent = i;
+      button.addEventListener('click', () => {
+        currentPage = i;
+        applyFiltersAndSort();
+      });
+      pagination.appendChild(button);
+    }
   }
 
-  // Event listeners
-  searchInput.addEventListener('input', filterTeachers);
-  filterGrade.addEventListener('change', filterTeachers);
-  filterSubject.addEventListener('change', filterTeachers);
-</script>
+  function openModal(teacher) {
+    modalImage.src = teacher.image || 'assets/img/teachers/placeholder.jpg';
+    modalName.textContent = teacher.name;
+    modalSubject.querySelector('span').textContent = teacher.subject || '-';
+    modalGrades.querySelector('span').textContent = (teacher.grades && teacher.grades.length > 0) ? teacher.grades.join(', ') : '-';
+    modalBio.textContent = teacher.bio || 'لا توجد سيرة ذاتية متاحة.';
+    modalRating.innerHTML = Array.from({ length: 5 }, (_, i) => `<i class="fas fa-star ${i < teacher.rating ? 'star' : 'text-gray-300'}"></i>`).join('');
+    modalContact.querySelector('span').textContent = teacher.contact;
+    teacherModal.style.display = 'block';
+  }
 
-</body>
-</html>
+  closeModal.addEventListener('click', () => teacherModal.style.display = 'none');
+  window.addEventListener('click', (e) => e.target === teacherModal && (teacherModal.style.display = 'none'));
+
+  // Load saved filters
+  const savedFilters = JSON.parse(localStorage.getItem('teacherFilters') || '{}');
+  searchInput.value = savedFilters.search || '';
+  filterGrade.value = savedFilters.grade || '';
+  filterSubject.value = savedFilters.subject || '';
+  sortBy.value = savedFilters.sort || 'name-asc';
+
+  [searchInput, filterGrade, filterSubject, sortBy].forEventListener('input', applyFiltersAndSort);
+  sortBy.addEventListener('change', applyFiltersAndSort);
+</script>
