@@ -2,11 +2,11 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="مدرسة الإسراء النموذجية للبنين في طولكرم - تعليم حديث برؤية مستقبلية تركز على القيم الإسلامية والإبداع">
   <meta name="keywords" content="مدرسة الإسراء, تعليم, طولكرم, مدرسة للبنين, تعليم إسلامي">
   <meta name="author" content="عمر أبو بكر">
-  <meta property="og:title" content="م modulatedة الإسراء النموذجية للبنين - طولكرم">
+  <meta property="og:title" content="مدرسة الإسراء النموذجية للبنين - طولكرم">
   <meta property="og:description" content="انضم إلى مدرسة الإسراء النموذجية لتعليم متميز يجمع بين القيم الإسلامية والتطور الأكاديمي">
   <meta property="og:image" content="assets/img/hero.jpg">
   <meta property="og:url" content="https://www.israaschool.com">
@@ -62,14 +62,57 @@
       background: linear-gradient(135deg, #3950d4, #6b7dc4);
     }
 
-    body.light-mode header {
-      background: rgba(255,255,255,0.8);
-      color: #111827;
-    }
+  /* Existing styles remain unchanged, only adding/modifying the relevant parts */
+  body.light-mode .hero-subtext {
+    color: #1f2937; /* Dark gray for better contrast in light mode */
+  }
 
-    body.light-mode .hero-overlay {
-      background: linear-gradient(to bottom, rgba(245,245,245,0.8), rgba(245,245,245,0.95));
+  /* Adjust hero-overlay for light mode to ensure text readability */
+  body.light-mode .hero-overlay {
+    background: linear-gradient(to bottom, rgba(245,245,245,0.6), rgba(245,245,245,0.8));
+  }
+
+  /* Ensure hero text remains readable in all modes */
+  .hero-text {
+    color: #6b7dc4; /* Maintain primary color for hero text */
+  }
+
+  /* Enhanced Responsive Design (unchanged from previous, included for context) */
+  @media (max-width: 1024px) {
+    .hero-text {
+      font-size: 2.75rem !important;
     }
+    .hero-subtext {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-text {
+      font-size: 2.25rem !important;
+    }
+    .hero-subtext {
+      font-size: 1rem !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-text {
+      font-size: 1.75rem !important;
+    }
+    .hero-subtext {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-text {
+      font-size: 1.5rem !important;
+    }
+    .hero-subtext {
+      font-size: 0.85rem !important;
+    }
+  }
 
     body.light-mode #stats {
       background: #e0e7ff;
@@ -160,21 +203,126 @@
     }
 
     /* Enhanced Responsive Design */
+    @media (max-width: 1024px) {
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .hero-text {
+        font-size: 2.75rem !important;
+      }
+
+      .hero-subtext {
+        font-size: 1.1rem !important;
+      }
+
+      .grid.md\\:grid-cols-3, .grid.md\\:grid-cols-4 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
       .hero-text {
-        font-size: 2.5rem !important;
+        font-size: 2.25rem !important;
       }
+
       .hero-subtext {
         font-size: 1rem !important;
+      }
+
+      .grid.md\\:grid-cols-3, .grid.md\\:grid-cols-4 {
+        grid-template-columns: 1fr;
+      }
+
+      header .container {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
+      }
+
+      .mobile-menu {
+        width: 100%;
+        top: 4rem;
+        padding: 1.5rem;
+      }
+
+      .mobile-menu a {
+        font-size: 1.2rem;
+        padding: 0.75rem;
+        display: block;
+      }
+
+      #stats h3 {
+        font-size: 2rem;
+      }
+
+      #contact iframe {
+        height: 300px;
       }
     }
 
     @media (max-width: 640px) {
       .hero-text {
-        font-size: 2rem !important;
+        font-size: 1.75rem !important;
       }
+
       .hero-subtext {
         font-size: 0.9rem !important;
+      }
+
+      .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .glass {
+        padding: 1rem;
+      }
+
+      #news img {
+        height: 160px;
+      }
+
+      footer .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text {
+        font-size: 1.5rem !important;
+      }
+
+      .hero-subtext {
+        font-size: 0.85rem !important;
+      }
+
+      #back-to-top {
+        padding: 8px;
+        bottom: 15px;
+        left: 15px;
+      }
+
+      .mobile-menu a {
+        font-size: 1rem;
       }
     }
   </style>
@@ -192,104 +340,105 @@
   </button>
 
   <header class="fixed top-0 left-0 right-0 z-50 glass" role="banner">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-[#6b7dc4]" aria-label="الصفحة الرئيسية لمدرسة الإسراء">مدرسة الإسراء النموذجية - للبنين</a>
-      <nav class="hidden md:flex space-x-6 rtl:space-x-reverse text-gray-300" role="navigation">
-        <a href="#about" class="hover:text-[#3950d4]" aria-label="عن المدرسة">عن المدرسة</a>
-        <a href="#stats" class="hover:text-[#3950d4]" aria-label="الإحصائيات">الأرقام</a>
-        <a href="#features" class="hover:text-[#3950d4]" aria-label="المميزات">مميزاتنا</a>
-        <a href="#news" class="hover:text-[#3950d4]" aria-label="الأخبار">الأخبار</a>
-        <a href="#contact" class="hover:text-[#3950d4]" aria-label="تواصل معنا">تواصل</a>
-        <a href="teachers.html" class="hover:text-[#3950d4]" aria-label="كادر التدريس">كادر التدريس</a>
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-xl md:text-2xl font-bold text-[#6b7dc4]" aria-label="الصفحة الرئيسية لمدرسة الإسراء">مدرسة الإسراء النموذجية - للبنين</a>
+      <nav class="hidden md:flex space-x-4 rtl:space-x-reverse text-gray-300" role="navigation">
+        <a href="#about" class="hover:text-[#3950d4] px-2 py-1" aria-label="عن المدرسة">عن المدرسة</a>
+        <a href="#stats" class="hover:text-[#3950d4] px-2 py-1" aria-label="الإحصائيات">الأرقام</a>
+        <a href="#features" class="hover:text-[#3950d4] px-2 py-1" aria-label="المميزات">مميزاتنا</a>
+        <a href="#news" class="hover:text-[#3950d4] px-2 py-1" aria-label="الأخبار">الأخبار</a>
+        <a href="#newsletter" class="hover:text-[#3950d4] px-2 py-1" aria-label="النشرة الإخبارية">النشرة الإخبارية</a>
+        <a href="#contact" class="hover:text-[#3950d4] px-2 py-1" aria-label="تواصل معنا">تواصل</a>
+        <a href="teachers.html" class="hover:text-[#3950d4] px-2 py-1" aria-label="كادر التدريس">كادر التدريس</a>
       </nav>
       <button id="toggle-theme" class="ml-4 text-gray-300 hover:text-[#3950d4]" aria-label="تبديل الوضع الليلي">
         <i class="fa-solid fa-moon"></i>
       </button>
-      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-[#3950d4]" aria-label="قائمة الهاتف المحمول">
-        <i class="fa-solid fa-bars"></i>
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-[#3950d4] p-2" aria-label="قائمة الهاتف المحمول">
+        <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
-    <nav id="mobile-menu" class="mobile-menu hidden md:hidden fixed top-16 right-0 w-64 h-full bg-[#0b111e] glass p-4 space-y-4">
-      <a href="#about" class="block hover:text-[#3950d4]" aria-label="عن المدرسة">عن المدرسة</a>
-      <a href="#stats" class="block hover:text-[#3950d4]" aria-label="الإحصائيات">الأرقام</a>
-      <a href="#features" class="block hover:text-[#3950d4]" aria-label="المميزات">مميزاتنا</a>
-      <a href="#news" class="block hover:text-[#3950d4]" aria-label="الأخبار">الأخبار</a>
-      <a href="#newsletter" class="block hover:text-[#3950d4]" aria-label="النشرة الإخبارية">النشرة الإخبارية</a>
-      <a href="#contact" class="block hover:text-[#3950d4]" aria-label="تواصل معنا">تواصل</a>
-      <a href="teachers.html" class="block hover:text-[#3950d4]" aria-label="كادر التدريس">كادر التدريس</a>
+    <nav id="mobile-menu" class="mobile-menu hidden md:hidden fixed top-16 right-0 w-full h-[calc(100vh-4rem)] bg-[#0b111e] glass p-6 space-y-4 overflow-y-auto">
+      <a href="#about" class="block hover:text-[#3950d4] text-lg" aria-label="عن المدرسة">عن المدرسة</a>
+      <a href="#stats" class="block hover:text-[#3950d4] text-lg" aria-label="الإحصائيات">الأرقام</a>
+      <a href="#features" class="block hover:text-[#3950d4] text-lg" aria-label="المميزات">مميزاتنا</a>
+      <a href="#news" class="block hover:text-[#3950d4] text-lg" aria-label="الأخبار">الأخبار</a>
+      <a href="#newsletter" class="block hover:text-[#3950d4] text-lg" aria-label="النشرة الإخبارية">النشرة الإخبارية</a>
+      <a href="#contact" class="block hover:text-[#3950d4] text-lg" aria-label="تواصل معنا">تواصل</a>
+      <a href="teachers.html" class="block hover:text-[#3950d4] text-lg" aria-label="كادر التدريس">كادر التدريس</a>
     </nav>
   </header>
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center text-center" role="region" aria-labelledby="hero-title">
-  <img src="assets/img/hero-school.jpg" alt="صورة رئيسية لمدرسة الإسراء تُظهر الطلاب في التجمُّع الصباحي" class="absolute inset-0 w-full h-full object-cover opacity-90">
-  <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-[#0c153c]/80 to-[#0b111e]/90 transition"></div>
-  <div class="relative z-10 max-w-3xl px-4 text-white">
-    <h1 id="hero-title" class="text-4xl md:text-6xl font-bold mb-4 text-[#6b7dc4] hero-text">مدرسة الإسراء النموذجية للبنين</h1>
-    <p class="text-lg md:text-xl mb-6 text-gray-200 hero-subtext">تعليم حديث برؤية مستقبلية في طولكرم</p>
-    <a href="#about" class="btn-primary text-white py-3 px-6 rounded-lg text-lg shadow-lg inline-block hover:shadow-xl transition-shadow" aria-label="استكشف المزيد عن المدرسة">استكشف المزيد</a>
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="relative min-h-[80vh] flex items-center justify-center text-center" role="region" aria-labelledby="hero-title">
+    <img src="assets/img/hero-school.jpg" alt="صورة رئيسية لمدرسة الإسراء تُظهر الطلاب في التجمُّع الصباحي" class="absolute inset-0 w-full h-full object-cover object-center opacity-90">
+    <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-[#0c153c]/80 to-[#0b111e]/90 transition"></div>
+    <div class="relative z-10 max-w-4xl px-4 text-white">
+      <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#6b7dc4] hero-text">مدرسة الإسراء النموذجية للبنين</h1>
+      <p class="text-base sm:text-lg md:text-xl mb-6 text-gray-200 hero-subtext">تعليم حديث برؤية مستقبلية في طولكرم</p>
+      <a href="#about" class="btn-primary text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-base sm:text-lg shadow-lg inline-block hover:shadow-xl transition-shadow" aria-label="استكشف المزيد عن المدرسة">استكشف المزيد</a>
+    </div>
+  </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 container mx-auto px-6" role="region" aria-labelledby="about-title">
-    <div class="text-center mb-12">
-      <h2 id="about-title" class="text-3xl font-bold mb-4 text-[#3950d4]">عن المدرسة</h2>
-      <p class="text-gray-400">مدرسة خيرية تربوية فاعلة تهدف إلى إنشاء جيل تربوي يتصف بالصدق والإبداع والعطاء</p>
+  <section id="about" class="py-12 sm:py-16 md:py-20 container mx-auto px-4 sm:px-6" role="region" aria-labelledby="about-title">
+    <div class="text-center mb-8 sm:mb-12">
+      <h2 id="about-title" class="text-2xl sm:text-3xl font-bold mb-4 text-[#3950d4]">عن المدرسة</h2>
+      <p class="text-gray-400 text-sm sm:text-base">مدرسة خيرية trupوية فاعلة تهدف إلى إنشاء جيل تربوي يتصف بالصدق والإبداع والعطاء</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition" role="article">
-        <i class="fa-solid fa-lightbulb text-3xl text-[#3950d4] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">رؤيتنا</h3>
-        <p>إعداد جيل تربوي مبدع يتصف بالصدق والعطاء، قادر على مواجهة تحديات المستقبل.</p>
+    <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="glass rounded-2xl p-4 sm:p-6 text-center hover:-translate-y-2 transition" role="article">
+        <i class="fa-solid fa-lightbulb text-2xl sm:text-3xl text-[#3950d4] mb-4"></i>
+        <h3 class="font-bold text-base sm:text-lg mb-2">رؤيتنا</h3>
+        <p class="text-sm sm:text-base">إعداد جيل تربوي مبدع يتصف بالصدق والعطاء، قادر على مواجهة تحديات المستقبل.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition" role="article">
-        <i class="fa-solid fa-book-open text-3xl text-[#3950d4] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">رسالتنا</h3>
-        <p>تقديم تعليم أكاديمي وتربوي متميز، مع التركيز على تنمية القيم الإسلامية والمهارات الحياتية.</p>
+      <div class="glass rounded-2xl p-4 sm:p-6 text-center hover:-translate-y-2 transition" role="article">
+        <i class="fa-solid fa-book-open text-2xl sm:text-3xl text-[#3950d4] mb-4"></i>
+        <h3 class="font-bold text-base sm:text-lg mb-2">رسالتنا</h3>
+        <p class="text-sm sm:text-base">تقديم تعليم أكاديمي وتربوي متميز، مع التركيز على تنمية القيم الإسلامية والمهارات الحياتية.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:-translate-y-2 transition" role="article">
-        <i class="fa-solid fa-handshake-angle text-3xl text-[#3950d4] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">قيمنا</h3>
-        <p>الصدق، الإبداع، العطاء، والالتزام بالقيم الإسلامية.</p>
+      <div class="glass rounded-2xl p-4 sm:p-6 text-center hover:-translate-y-2 transition" role="article">
+        <i class="fa-solid fa-handshake-angle text-2xl sm:text-3xl text-[#3950d4] mb-4"></i>
+        <h3 class="font-bold text-base sm:text-lg mb-2">قيمنا</h3>
+        <p class="text-sm sm:text-base">الصدق، الإبداع، العطاء، والالتزام بالقيم الإسلامية.</p>
       </div>
     </div>
   </section>
 
   <!-- Stats Section -->
-  <section id="stats" class="py-20 bg-gradient-to-r from-[#0c153c] to-[#0b111e] text-white" role="region" aria-labelledby="stats-title">
-    <div class="container mx-auto px-6 text-center">
-      <h2 id="stats-title" class="text-3xl font-bold mb-12 text-[#6b7dc4]">أرقام تعكس نجاحنا</h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="سنوات الخبرة">26+</h3><p>سنوات خبرة</p></div>
-        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="عدد الطلاب">600+</h3><p>طالب</p></div>
-        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="نسبة النجاح">98%</h3><p>نسبة النجاح</p></div>
-        <div><h3 class="text-4xl font-bold text-[#3950d4]" aria-label="الأنشطة اللامنهجية">10+</h3><p>نشاط لا منهجي</p></div>
+  <section id="stats" class="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-[#0c153c] to-[#0b111e] text-white" role="region" aria-labelledby="stats-title">
+    <div class="container mx-auto px-4 sm:px-6 text-center">
+      <h2 id="stats-title" class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-[#6b7dc4]">أرقام تعكس نجاحنا</h2>
+      <div class="grid md:grid-cols-4 gap-6 sm:gap-8">
+        <div><h3 class="text-3xl sm:text-4xl font-bold text-[#3950d4]" aria-label="سنوات الخبرة">26+</h3><p class="text-sm sm:text-base">سنوات خبرة</p></div>
+        <div><h3 class="text-3xl sm:text-4xl font-bold text-[#3950d4]" aria-label="عدد الطلاب">600+</h3><p class="text-sm sm:text-base">طالب</p></div>
+        <div><h3 class="text-3xl sm:text-4xl font-bold text-[#3950d4]" aria-label="نسبة النجاح">98%</h3><p class="text-sm sm:text-base">نسبة النجاح</p></div>
+        <div><h3 class="text-3xl sm:text-4xl font-bold text-[#3950d4]" aria-label="الأنشطة اللامنهجية">10+</h3><p class="text-sm sm:text-base">نشاط لا منهجي</p></div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="py-20 container mx-auto px-6" role="region" aria-labelledby="features-title">
-    <div class="text-center mb-12">
-      <h2 id="features-title" class="text-3xl font-bold mb-4 text-[#3950d4]">مميزاتنا</h2>
-      <p class="text-gray-400">بيئة تعليمية متطورة، كادر أكاديمي متميز، ورؤية تربوية تهدف إلى بناء جيل مبدع ومؤهل.</p>
+  <section id="features" class="py-12 sm:py-16 md:py-20 container mx-auto px-4 sm:px-6" role="region" aria-labelledby="features-title">
+    <div class="text-center mb-8 sm:mb-12">
+      <h2 id="features-title" class="text-2xl sm:text-3xl font-bold mb-4 text-[#3950d4]">مميزاتنا</h2>
+      <p class="text-gray-400 text-sm sm:text-base">بيئة تعليمية متطورة، كادر أكاديمي متميز، ورؤية تربوية تهدف إلى بناء جيل مبدع ومؤهل.</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition" role="article">
-        <i class="fa-solid fa-chalkboard-teacher text-3xl text-[#6b7dc4] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">كادر أكاديمي مؤهل</h3>
-        <p>فريق تدريس متميز يسعى لتقديم تعليم نوعي ومواكب للتطورات الحديثة.</p>
+    <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="glass rounded-2xl p-4 sm:p-6 text-center hover:scale-105 transition" role="article">
+        <i class="fa-solid fa-chalkboard-teacher text-2xl sm:text-3xl text-[#6b7dc4] mb-4"></i>
+        <h3 class="font-bold text-base sm:text-lg mb-2">كادر أكاديمي مؤهل</h3>
+        <p class="text-sm sm:text-base">فريق تدريس متميز يسعى لتقديم تعليم نوعي ومواكب للتطورات الحديثة.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition" role="article">
-        <i class="fa-solid fa-school text-3xl text-[#6b7dc4] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">بيئة تعليمية محفزة</h3>
-        <p>مرافق مدرسية مجهزة بأحدث التقنيات لتوفير بيئة تعليمية مناسبة.</p>
+      <div class="glass rounded-2xl p-4 sm:p-6 text-center hover:scale-105 transition" role="article">
+        <i class="fa-solid fa-school text-2xl sm:text-3xl text-[#6b7dc4] mb-4"></i>
+        <h3 class="font-bold text-base sm:text-lg mb-2">بيئة تعليمية محفزة</h3>
+        <p class="text-sm sm:text-base">مرافق مدرسية مجهزة بأحدث التقنيات لتوفير بيئة تعليمية مناسبة.</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition" role="article">
-        <i class="fa-solid fa-users text-3xl text-[#6b7dc4] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">رؤية تربوية شاملة</h3>
-        <p>تسعى المدرسة لبناء جيل مبدع ومؤهل قادر على مواجهة تحديات المستقبل.</p>
+      <div class="glass rounded-2xl p-4 sm:p-6 text-center hover:scale-105 transition" role="article">
+        <i class="fa-solid fa-users text-2xl sm:text-3xl text-[#6b7dc4] mb-4"></i>
+        <h3 class="font-bold text-base sm:text-lg mb-2">رؤية تربوية شاملة</h3>
+        <p class="text-sm sm:text-base">تسعى المدرسة لبناء جيل مبدع ومؤهل قادر على مواجهة تحديات المستقبل.</p>
       </div>
     </div>
   </section>
@@ -340,58 +489,58 @@
   </section>
 
   <!-- Google Maps Section -->
-  <section id="contact" class="py-20" role="region" aria-labelledby="contact-title">
-    <div class="container mx-auto px-6 text-center">
-      <h2 id="contact-title" class="text-3xl font-bold mb-8 text-[#3950d4]">موقع المدرسة</h2>
+  <section id="contact" class="py-12 sm:py-16 md:py-20" role="region" aria-labelledby="contact-title">
+    <div class="container mx-auto px-4 sm:px-6 text-center">
+      <h2 id="contact-title" class="text-2xl sm:text-3xl font-bold mb-8 text-[#3950d4]">موقع المدرسة</h2>
       <div class="rounded-2xl overflow-hidden shadow-lg">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1686.2108157309253!2d35.024002075013314!3d32.300524486369646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d1734a6c29361%3A0xbbf658a904df01fd!2z2YXYr9ix2LPYqSDYp9mE2KfYs9ix2KfYoSDYp9mE2YbZhdmI2LDYrNmK2KkgLdio2YbZitmG!5e0!3m2!1sen!2s!4v1756752632719!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" aria-label="خريطة موقع مدرسة الإسراء"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1686.2108157309253!2d35.024002075013314!3d32.300524486369646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d1734a6c29361%3A0xbbf658a904df01fd!2z2YXYr9ix2LPYqSDYp9mE2KfYs9ix2KfYoSDYp9mE2YbZhdmI2LDYrNmK2KkgLdio2YbZitmG!5e0!3m2!1sen!2s!4v1756752632719!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" aria-label="خريطة موقع مدرسة الإسراء"></iframe>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-[#0b111e] text-gray-200 pt-12" role="contentinfo">
-    <div class="container mx-auto px-6">
-      <div class="glass rounded-2xl p-6 mb-10 text-center max-w-3xl mx-auto shadow-lg">
-        <i class="fa-solid fa-school text-2xl text-[#6b7dc4] mb-2"></i>
-        <p class="text-gray-300">مدرسة الإسراء النموذجية للبنين تسعى لتقديم تعليم نوعي وحديث، مع الاهتمام بالقيم والتطوير الشخصي للطلاب.</p>
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="glass rounded-2xl p-4 sm:p-6 mb-8 sm:mb-10 text-center max-w-3xl mx-auto shadow-lg">
+        <i class="fa-solid fa-school text-xl sm:text-2xl text-[#6b7dc4] mb-2"></i>
+        <p class="text-gray-300 text-sm sm:text-base">مدرسة الإسراء النموذجية للبنين تسعى لتقديم تعليم نوعي وحديث، مع الاهتمام بالقيم والتطوير الشخصي للطلاب.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <div class="glass rounded-2xl p-6 text-right shadow-lg hover:-translate-y-1 transition">
-          <h3 class="text-[#6b7dc4] font-bold mb-4 flex items-center gap-2">
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="glass rounded-2xl p-4 sm:p-6 text-right shadow-lg hover:-translate-y-1 transition">
+          <h3 class="text-[#6b7dc4] font-bold mb-4 flex items-center gap-2 text-base sm:text-lg">
             <i class="fa-solid fa-address-card"></i> تواصل معنا
           </h3>
-          <p class="flex items-center gap-2"><i class="fa-solid fa-map-marker-alt text-[#3950d4]"></i> طولكرم, شارع ارتاح بالقرب من قصر ليلتي</p>
-          <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#3950d4]"></i> 0598166525</p>
-          <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-[#3950d4]"></i> israaboy99@gmail.com</p>
+          <p class="flex items-center gap-2 text-sm sm:text-base"><i class="fa-solid fa-map-marker-alt text-[#3950d4]"></i> طولكرم, شارع ارتاح بالقرب من قصر ليلتي</p>
+          <p class="flex items-center gap-2 text-sm sm:text-base"><i class="fa-solid fa-phone text-[#3950d4]"></i> 0598166525</p>
+          <p class="flex items-center gap-2 text-sm sm:text-base"><i class="fa-solid fa-envelope text-[#3950d4]"></i> israaboy99@gmail.com</p>
         </div>
-        <div class="glass rounded-2xl p-6 text-right shadow-lg hover:-translate-y-1 transition">
-          <h3 class="text-[#6b7dc4] font-bold mb-4 flex items-center gap-2">
+        <div class="glass rounded-2xl p-4 sm:p-6 text-right shadow-lg hover:-translate-y-1 transition">
+          <h3 class="text-[#6b7dc4] font-bold mb-4 flex items-center gap-2 text-base sm:text-lg">
             <i class="fa-solid fa-link"></i> روابط سريعة
           </h3>
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm sm:text-base">
             <li><a href="#about" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="عن المدرسة">عن المدرسة</a></li>
             <li><a href="#stats" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="الإحصائيات">الأرقام</a></li>
-            <li><a href="#features" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="المميزات">مميزاتنا</a></li>
+            <li><a href="#features" class="flex items-center gap-2 hover:text-[#3950d4]" aria“Because المميزات">مميزاتنا</a></li>
             <li><a href="#news" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="الأخبار">الأخبار</a></li>
             <li><a href="#newsletter" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="النشرة الإخبارية">النشرة الإخبارية</a></li>
             <li><a href="#contact" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="تواصل معنا">تواصل</a></li>
             <li><a href="teachers.html" class="flex items-center gap-2 hover:text-[#3950d4]" aria-label="كادر التدريس">كادر التدريس</a></li>
           </ul>
         </div>
-        <div class="glass rounded-2xl p-6 text-right shadow-lg hover:-translate-y-1 transition">
-          <h3 class="text-[#6b7dc4] font-bold mb-4 flex items-center gap-2">
+        <div class="glass rounded-2xl p-4 sm:p-6 text-right shadow-lg hover:-translate-y-1 transition">
+          <h3 class="text-[#6b7dc4] font-bold mb-4 flex items-center gap-2 text-base sm:text-lg">
             <i class="fa-solid fa-clock"></i> أوقات الدوام
           </h3>
-          <p class="flex items-center gap-2"><i class="fa-solid fa-calendar-day text-[#3950d4]"></i> الأحد - الخميس</p>
-          <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-[#3950d4]"></i> 7 صباحاً - 2 مساءً</p>
+          <p class="flex items-center gap-2 text-sm sm:text-base"><i class="fa-solid fa-calendar-day text-[#3950d4]"></i> الأحد - الخميس</p>
+          <p class="flex items-center gap-2 text-sm sm:text-base"><i class="fa-solid fa-clock text-[#3950d4]"></i> 7 صباحاً - 2 مساءً</p>
         </div>
       </div>
-      <div class="flex justify-center gap-6 mt-6">
-        <a href="https://www.facebook.com/IsraaExemplarySchool" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]" aria-label="صفحة فيسبوك"><i class="fab fa-facebook-f text-xl"></i></a>
-        <a href="https://www.instagram.com/israaboyschool/" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]" aria-label="صفحة إنستغرام"><i class="fab fa-instagram text-xl"></i></a>
+      <div class="flex justify-center gap-4 sm:gap-6 mt-6">
+        <a href="https://www.facebook.com/IsraaExemplarySchool" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]" aria-label="صفحة فيسبوك"><i class="fab fa-facebook-f text-lg sm:text-xl"></i></a>
+        <a href="https://www.instagram.com/israaboyschool/" class="glass rounded-full p-3 hover:-translate-y-1 transition text-[#3950d4]" aria-label="صفحة إنستغرام"><i class="fab fa-instagram text-lg sm:text-xl"></i></a>
       </div>
-      <div class="text-center text-gray-500 mt-6 text-sm">
+      <div class="text-center text-gray-500 mt-6 text-xs sm:text-sm">
         © 2025 مدرسة الإسراء النموذجية للبنين - طولكرم. جميع الحقوق محفوظة. | عمل طالب الإسراء عمر أبو بكر
       </div>
     </div>
@@ -419,6 +568,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (document.getElementById('mobile-menu').classList.contains('open')) {
+          document.getElementById('mobile-menu').classList.add('hidden');
+          document.getElementById('mobile-menu').classList.remove('open');
+          document.getElementById('mobile-menu-btn').innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+        }
       }
     });
   });
@@ -468,6 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lazyImages = document.querySelectorAll('img');
   lazyImages.forEach(img => {
     img.loading = 'lazy';
+    img.classList.add('w-full', 'object-cover');
   });
 
   /* =========================
@@ -513,8 +668,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('open');
     mobileMenuBtn.innerHTML = mobileMenu.classList.contains('open')
-      ? '<i class="fa-solid fa-times"></i>'
-      : '<i class="fa-solid fa-bars"></i>';
+      ? '<i class="fa-solid fa-times text-xl"></i>'
+      : '<i class="fa-solid fa-bars text-xl"></i>';
   });
 
   /* =========================
@@ -547,19 +702,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const emailInput = document.getElementById('newsletter-email');
   const errorMsg = document.getElementById('newsletter-error');
 
-  newsletterForm.addEventListener('click', (e) => {
-    e.preventDefault();
-    const email = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (newsletterForm && emailInput && errorMsg) {
+    newsletterForm.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (emailRegex.test(email)) {
-      errorMsg.classList.add('hidden');
-      alert('تم الاشتراك بنجاح!'); // Replace with actual API call in production
-      emailInput.value = '';
-    } else {
-      errorMsg.classList.remove('hidden');
-    }
-  });
+      if (emailRegex.test(email)) {
+        errorMsg.classList.add('hidden');
+        alert('تم الاشتراك بنجاح!'); // Replace with actual API call in production
+        emailInput.value = '';
+      } else {
+        errorMsg.classList.remove('hidden');
+      }
+    });
+  }
 
   /* =========================
      12. Social Sharing
@@ -580,7 +737,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
-
 </html>
-
-
